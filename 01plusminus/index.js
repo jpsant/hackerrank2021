@@ -2,19 +2,19 @@ const array = [1, 1, 0, -1, -1]
 
 const plusMinus = (arr) => {
   const divider = arr.length;
-  let positives = [];
-  let negatives = [];
-  let nulls = [];
+  let positive = 0;
+  let negative = 0;
+  let zeros = 0;
   arr.map(e => {
     if (e === 0) {
-      nulls.push(e);
+      zeros++;
     } else {
-      e > 0 ? positives.push(e) : negatives.push(e);
+      e > 0 ? positive++ : negative++;
     }
   });
-  console.log((positives.length / divider).toFixed(6));
-  console.log((negatives.length / divider).toFixed(6));
-  console.log((nulls.length / divider).toFixed(6));
+  console.log((positive / divider).toFixed(6));
+  console.log((negative / divider).toFixed(6));
+  console.log((zeros / divider).toFixed(6));
 }
 
 plusMinus(array);
